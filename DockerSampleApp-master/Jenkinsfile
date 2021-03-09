@@ -30,13 +30,7 @@ pipeline {
  
             }
         }
- stage('Run Docker container on remote hosts') {
-             
-            steps {
-                sh "docker -H ssh://jenkins@172.31.39.244 run -d -p 4001:8089 nikhilnidhi/nginxtest"
  
-            }
-        }
     }
 }
 
