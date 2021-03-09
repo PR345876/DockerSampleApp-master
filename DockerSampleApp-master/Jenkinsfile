@@ -6,8 +6,8 @@ pipeline {
            steps {
               
                 sh 'docker build -t nginxtest:latest .' 
-                sh 'docker tag nginxtest nikhilnidhi/nginxtest:latest'
-                sh 'docker tag nginxtest nikhilnidhi/nginxtest:$BUILD_NUMBER'
+                sh 'docker tag nginxtest PR345876/nginxtest:latest'
+                sh 'docker tag nginxtest PR345876/nginxtest:$BUILD_NUMBER'
                
           }
         }
@@ -16,8 +16,8 @@ pipeline {
           
             steps {
         withDockerRegistry([ credentialsId: "Dockerhub", url: "" ]) {
-          sh  'docker push nikhilnidhi/nginxtest:latest'
-          sh  'docker push nikhilnidhi/nginxtest:$BUILD_NUMBER' 
+          sh  'docker push PR345876/nginxtest:latest'
+          sh  'docker push PR345876/nginxtest:$BUILD_NUMBER' 
         }
                   
           }
