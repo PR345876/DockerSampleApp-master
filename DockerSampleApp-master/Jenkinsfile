@@ -1,4 +1,5 @@
 pipeline {
+
     agent any
  stages {
   stage('Docker Build and Tag') {
@@ -38,3 +39,4 @@ pipeline {
         }
     }
 }
+
